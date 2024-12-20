@@ -11,6 +11,7 @@
   hyprland.enable = false;
   gaming.enable = false;
   terraria-server.enable = true;
+  factorio-server.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -78,6 +79,7 @@
     git
     wget
     curl
+    btop
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
