@@ -12,8 +12,9 @@
       enable = true;
       lan = true;
       game-name = "crow";
-      game-password = "egg123";
       openFirewall = true;
+
+      saveName = "lefactory";
 
       admins = [
         "travmonkey14"
@@ -38,17 +39,5 @@
           };
       in builtins.map modToDrv modList;
     };
-
-    # systemd.services.factorio = {
-    #   description = "Factorio Server";
-    #   after = [ "network.target" ];
-    #
-    #   serviceConfig = {
-    #     WorkingDirectory = "/home/aphelios";
-    #     ExecStart = "/run/current-system/sw/bin/docker compose up";
-    #     ExecStop = "/run/current-system/sw/bin/docker compose down";
-    #     Restart = "always";
-    #   };
-    # };
   };
 }
