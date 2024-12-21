@@ -16,12 +16,20 @@
 
         # Layour of the bar
         modules-left = [ "hyprland/window" ];
-        modules-center =
-          [ "cpu" "memory" "disk" "temperature" "mpris" "hyprland/workspaces" "clock" ];
+        modules-center = [
+          "cpu"
+          "memory"
+          "disk"
+          "temperature"
+          "mpris"
+          "hyprland/workspaces"
+          "clock"
+        ];
         modules-right = [
           "tray"
           "idle_inhibitor"
           "custom/colorpicker"
+          "custom/microphone"
           "pulseaudio"
           "custom/logo"
         ];
@@ -132,6 +140,15 @@
             paused = " ";
             stopped = " ";
           };
+        };
+
+        # custom module to mute and unmute microphone on click
+        "custom/microphone" = {
+          format = "{}";
+          exec =
+            "wpctl get-volume @DEFAULT_SOURCE@ | grep -q MUTED && echo ' ' || echo ''";
+          interval = 1;
+          on-click = "wpctl set-mute @DEFAULT_SOURCE@ toggle";
         };
 
         "pulseaudio" = {
@@ -270,6 +287,7 @@
       #temperature,
       #custom-weather,
       #idle_inhibitor,
+      #custom-microphone,
       #mpris,
       #jack,
       #tray,
@@ -327,6 +345,7 @@
 
 
       #pulseaudio,
+      #custom-microphone,
       #network, 
       #idle_inhibitor,
       #custom-logo {
@@ -343,6 +362,11 @@
       #pulseaudio {
         padding: 1px 8px 0px 8px;
         color: #fe8019;
+      }
+      
+      #custom-microphone {
+        padding: 1px 8px 0px 8px;
+        color: #d3869b;
       }
 
       #network {

@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # File management
+    wev
     nemo
     peazip
     qdirstat

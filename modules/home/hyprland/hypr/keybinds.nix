@@ -117,8 +117,9 @@
       ", xf86AudioNext, exec, playerctl next"
       ", xf86AudioPrev, exec, playerctl previous"
       ", xf86audiostop, exec, playerctl stop"
-      ", xf86audioraisevolume, exec, swayosd-client --output-volume raise"
-      ", xf86audiolowervolume, exec, swayosd-client --output-volume lower"
+      ", xf86audioraisevolume, exec, playerctl --player=spotify volume 0.05+"
+      ", xf86audiolowervolume, exec, playerctl --player=spotify volume 0.05-"
+      ", xf86audioMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
 
       # caps lock indicator
 
@@ -150,9 +151,8 @@
 
     ];
 
-    bindr = [
-      "Ctrl+Super, R, exec, killall .waybar-wrapped ydotool; waybar &"
-    ];
+    bindr =
+      [ "Ctrl+Super, R, exec, killall .waybar-wrapped ydotool; waybar &" ];
 
     bindle = [
       "$mod CTRL, bracketright, exec, ags run-js 'brightness.screen_value += 0.05; indicator.popup(1);'"
