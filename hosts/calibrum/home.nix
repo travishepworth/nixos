@@ -12,9 +12,7 @@
   home.username = "travis";
   home.homeDirectory = "/home/travis";
 
-  home.file = {
-    ".config/rofi".source = ../../unmanagedDots/rofi;
-  };
+  home.file = { ".config/rofi".source = ../../unmanagedDots/rofi; };
 
   # Default xdg applications
   xdg = {
@@ -38,8 +36,11 @@
         "video/webm" = "mpv.desktop";
 
         "application/pdf" = "zathura.desktop";
-        # set default brower to firefox for xdg portal opening
+        # set default brower to librewolf for xdg portal opening
         "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
+        "x-scheme-handler/about" = "librewolf.desktop";
+        "x-scheme-handler/unknown" = "librewolf.desktop";
       };
     };
   };

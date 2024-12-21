@@ -66,7 +66,7 @@
         "windowsOut, 1, 5, winOut, popin"
         "windowsMove, 1, 5, wind, slide"
         "fade, 1, 5, overshot"
-        "workspaces, 1, 5, wind"
+        "workspaces, 1, 5, wind, slide"
         "windows, 1, 5, bounce, popin"
 
         "specialWorkspace, 1, 3, md3_decel, slidevert"

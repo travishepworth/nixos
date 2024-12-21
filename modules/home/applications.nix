@@ -27,7 +27,6 @@
 
     # Games
     heroic
-    discord-screenaudio
     vesktop
 
     # Development
@@ -41,7 +40,6 @@
     librewolf
     ungoogled-chromium
     obs-studio
-    teams-for-linux
     stellarium
   ];
 }

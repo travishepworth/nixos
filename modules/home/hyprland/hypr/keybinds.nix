@@ -68,8 +68,8 @@
       "$mod SHIFT, TAB, workspace, -1"
 
       # Move to gaming workspace
-      "$mod, G, workspace, 20"
-      "$mod SHIFT, G, movetoworkspace, 20"
+      "$mod, G, workspace, 10"
+      "$mod SHIFT, G, movetoworkspace, 10"
 
       # Scroll wheel navigation
       "$mod SHIFT, mouse_down, movetoworkspace, m-1"

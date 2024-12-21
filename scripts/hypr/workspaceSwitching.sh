@@ -22,12 +22,12 @@ if [ "$2" == "--move" ]; then
 fi
 
 # switch to workspace
-if [ "$current_monitor" == "HDMI-A-1" ]; then
-  hyprctl dispatch ${keyword} "${workspace}"
-elif [ "$current_monitor" == "DP-1" ]; then
-  ((workspace += 10))
+if [ "$current_monitor" == "DP-1" ]; then
   hyprctl dispatch ${keyword} "${workspace}"
 elif [ "$current_monitor" == "DP-2" ]; then
+  ((workspace += 10))
+  hyprctl dispatch ${keyword} "${workspace}"
+elif [ "$current_monitor" == "DP-3" ]; then
   ((workspace += 20))
   hyprctl dispatch ${keyword} "${workspace}"
 else

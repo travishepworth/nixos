@@ -30,7 +30,7 @@
       "wl-paste --type text --watch cliphist store "
 
       # Move mouse to center monitor
-      "hyprctl dispatch workspace 11"
+      "hyprctl dispatch workspace 1"
 
     ];
   };
