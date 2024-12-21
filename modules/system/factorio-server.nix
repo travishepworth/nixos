@@ -14,24 +14,29 @@
       game-name = "crow";
       game-password = "egg123";
       openFirewall = true;
-      
 
-      # mods = let
-      #   inherit (pkgs) lib;
-      #   modDir = "/home/aphelios/.factorio/mods";
-      #   modList = lib.pipe (builtins.readDir modDir) [
-      #     (lib.filterAttrs (k: v: v == "regular"))
-      #     (lib.mapAttrsToList (k: v: k))
-      #     (builtins.filter (lib.hasSuffix ".zip"))
-      #   ];
-      #   modToDrv = modFileName:
-      #     pkgs.runCommand "copy-factorio-mods" { } ''
-      #       mkdir $out
-      #       cp ${modDir + "/${modFileName}"} $out/${modFileName}
-      #     '' // {
-      #       deps = [ ];
-      #     };
-      # in builtins.map modToDrv modList;
+      admins = [
+        "travmonkey14"
+        "Zurpie"
+      ];
+
+      mods = let
+        inherit (pkgs) lib;
+        modDir = /home/aphelios/.factorio/mods;
+        modList = lib.pipe modDir [
+          builtins.readDir
+          (lib.filterAttrs (k: v: v == "regular"))
+          (lib.mapAttrsToList (k: v: k))
+          (builtins.filter (lib.hasSuffix ".zip"))
+        ];
+        modToDrv = modFileName:
+          pkgs.runCommand "copy-factorio-mods" { } ''
+            mkdir $out
+            cp ${modDir + "/${modFileName}"} $out/${modFileName}
+          '' // {
+            deps = [ ];
+          };
+      in builtins.map modToDrv modList;
     };
 
     # systemd.services.factorio = {
