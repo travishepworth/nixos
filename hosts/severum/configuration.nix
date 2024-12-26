@@ -8,12 +8,23 @@
     ../../modules/system/default.nix
   ];
 
+  networking.firewall.allowedTCPPorts = [ 8211 ];
+  networking.firewall.allowedUDPPorts = [ 8211 ];
+
   hyprland.enable = false;
   gaming.enable = false;
   terraria-server.enable = true;
   factorio-server.enable = true;
+  palworld-server.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs;
+    [
+      glibc
+      gcc
+    ];
 
   # nix = {
   #   package = pkgs.nixVersions.stable;
@@ -80,6 +91,7 @@
     wget
     curl
     btop
+    steamcmd
   ];
 
   i18n.defaultLocale = "en_US.UTF-8";
