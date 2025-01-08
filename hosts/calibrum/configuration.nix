@@ -15,6 +15,7 @@
   hyprland.enable = true;
   gaming.enable = true;
   terraria-server.enable = false;
+  factorio-server.enable = false;
 
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowUnfreePredicate = _: true;
