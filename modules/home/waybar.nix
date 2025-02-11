@@ -11,6 +11,7 @@
       # General settings
       mainBar = {
         layer = "top";
+        output = "!HDMI-A-2";
         position = "top";
         reload_style_on_change = true;
 

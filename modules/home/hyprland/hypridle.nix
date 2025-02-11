@@ -14,15 +14,15 @@
 
       listener = [
         {
-          timeout = "300"; # 5min
+          timeout = "300"; # 5 min
           on-timeout =
             "loginctl lock-session"; # lock screen when timeout has passed
         }
         {
-          timeout = "15"; # 5.5min
+          timeout = "360"; # 6 min
           on-timeout =
-            "hyprctl keyword monitor HDMI-A-1, disable && hyprctl keyword monitor DP-1, disable && hyprctl keyword monitor DP-2, disable &&"; # I LOVE hdmi monitors
-          on-resume = "hyprctl reload";
+            "hyprctl dispatch dmps off"; # I LOVE hdmi monitors
+          on-resume = "hyprctl dispatch dmps on";
         }
       ];
     };

@@ -48,7 +48,7 @@
       # Gamescope
       "noblur,gamescope"
       "fullscreen,gamescope"
-      "workspace 20 silent,^(.*gamescope.*)$"
+      "workspace 10 silent,^(.*gamescope.*)$"
     ];
 
     windowrulev2 = [

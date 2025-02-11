@@ -5,7 +5,8 @@
     # File management
     wev
     nemo
-    peazip
+    xclicker
+    # peazip
     qdirstat
     qbittorrent
     discord
@@ -29,14 +30,17 @@
     # Games
     heroic
     vesktop
+    calibre
 
     # Development
     btop
     lazygit
-    # kicad
+    kicad
 
     # Other
-    # bitwarden-desktop
+    bitwarden-desktop
+    # bambu-studio
+    orca-slicer
     slack
     librewolf
     ungoogled-chromium

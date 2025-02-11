@@ -57,7 +57,7 @@
   #     [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   # };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   security.rtkit.enable = true;
   services.pipewire = {
